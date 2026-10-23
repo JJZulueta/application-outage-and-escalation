@@ -1,0 +1,50 @@
+INC-004: Training Staff Portal unavailable
+SIMULATED ESCALATION TO APPLICATION SUPPORT
+
+Impact:
+The training portal cannot be accessed on the lab VM.
+Wider impact has not been tested.
+
+Evidence:
+- Browser shows ERR_CONNECTION_REFUSED.
+- staffportal.test resolves to 127.0.0.1.
+- Direct HTTP request to 127.0.0.1:8000 fails.
+- No listener was returned for TCP port 8000.
+
+Assessment:
+The application server is not accepting connections.
+In this lab, it was deliberately stopped with Ctrl+C.
+
+Requested action:
+Restore the application server and confirm it is listening.
+Service desk will then verify HTTP and browser access.
+
+Draft user update:
+We have confirmed the training portal is unavailable.
+An escalation summary is prepared for application support.
+There is no confirmed recovery time yet.
+Next update: after the server recovery attempt.
+
+Training exercise only. No escalation or message was sent.
+
+RESOLUTION AND VERIFICATION
+
+Recovery action:
+Restarted the Python training web server.
+The lab operator performed the simulated application support action.
+
+Verification:
+- TCP port 8000 is listening on 127.0.0.1.
+- The portal hostname returns HTTP 200 OK.
+- The portal loads successfully in the browser.
+
+Cause:
+The server was deliberately stopped with Ctrl+C for this exercise.
+
+Draft recovery update:
+The training portal is available again.
+Technical checks and a browser test passed.
+Please retry access and report any further issues.
+
+Status: Resolved in lab.
+No real user confirmation or external communication occurred.
